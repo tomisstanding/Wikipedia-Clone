@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wikipedia</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>New page</h1>
+      <section>
+        <form action="/wiki" method="POST">
+          <label for="wiki[title]">Title:</label><br>
+          <input type="text" name="wiki[title]"><br>
+          <label for="wiki[category]">Category:</label><br>
+          <input type="text" name="wiki[category]"><br>
+          <label for="wiki[content]"></label><br>
+          <input type="text" name="wiki[content]" placeholder="create an article here...">
+          <input type="submit">
+        </form>
+      </section>
+    </header>
+  </main>
+</body>
+</html>
