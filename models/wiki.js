@@ -6,13 +6,13 @@ Wiki.findAll = () => {
   return db.manyOrNone(`Select * FROM wiki`);
 }
 
-Wiki.save = (wiki) => {
+Wiki.save = (wiki, ourMarkdown) => {
   return db.none(`
   INSERT INTO wiki
   (title, category, content)
   VALUES
   ($1, $2, $3)`,
-  [wiki.title, wiki.category, wiki.content]
+  [wiki.title, wiki.category, ourMarkdown]
   );
 };
 
@@ -35,5 +35,9 @@ Wiki.update = (wiki, id) => {
     [wiki.title, wiki.category, wiki.content, id]
   );
 };
+
+Wiki.destroy = (id) => {
+  return db.query(`DELETE FROM wiki WHERE id = $1`, [id]);
+}
 
 module.exports = Wiki;
