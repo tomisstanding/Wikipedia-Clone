@@ -13,6 +13,9 @@ app.use(logger('dev'));
 app.set('view engine', 'ejs');
 
 
+//configure time-stamp to keep track of date updated
+const timestamp = require('time-stamp');
+
 // configure body-parser so that our app can handle our data
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));

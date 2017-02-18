@@ -42,7 +42,7 @@
     }
 
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 800px) {
       .sidenav {
         height: auto;
         padding: 15px;
@@ -91,7 +91,9 @@
       <div class="content-container">
         <h1><%= wiki.title %></h1>
         <h3><%= wiki.category %></h3>
-        <p><%= wiki.content %></p>
+        <p><%- wiki.content %></p>
+        <% `${wiki.sqlDate}` %>
+        <p><%= `{wiki.sqlDate}`.slice(0,10) %></p>
         <button><a href="/wiki/<%= wiki.id %>/edit">Edit</a></button>
       </div>
      <% }) %>

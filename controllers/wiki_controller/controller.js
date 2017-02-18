@@ -2,6 +2,10 @@ const Wiki = require('../../models/wiki');
 
 let controller = {};
 
+const timestamp = require('time-stamp');
+
+const marked = require('marked');
+
 controller.index = (req, res) => {
   Wiki
   .findAll()
@@ -25,10 +29,12 @@ controller.update = (req, res) => {
 }
 
 controller.create = (req, res) => {
-  let ourMarkdown = marked(req.body.content)
-  console.log('req.body:',req.body, 'our markdown:', ourMarkdown)
+  let originalDate = timestamp();
+  console.log(req.body.content)
+  let sqlDate = originalDate.split(':').join('-');
+  let ourMarkdown = marked(req.body.wiki.content)
   Wiki
-  .save(req.body.wiki, ourMarkdown)
+  .save(req.body.wiki, ourMarkdown, sqlDate)
   .then(() => res.redirect('/wiki'))
   .catch(err => console.log('ERROR', err));
 }
