@@ -30,12 +30,11 @@ controller.update = (req, res) => {
 
 controller.create = (req, res) => {
   let originalDate = timestamp();
-  console.log(req.body.content)
-  let sqlDate = originalDate.split(':').join('-');
+  let date_authored = originalDate.split(':').join('-');
   let ourMarkdown = marked(req.body.wiki.content)
   Wiki
-  .save(req.body.wiki, ourMarkdown, sqlDate)
-  .then(() => res.redirect('/wiki'))
+  .save(req.body.wiki, ourMarkdown, date_authored)
+  .then(() => res.redirect('/wiki/show'))
   .catch(err => console.log('ERROR', err));
 }
 
@@ -49,6 +48,17 @@ controller.edit = (req, res) => {
  .catch(err => console.log('ERROR', err));
   });
  };
+
+ controller.show = (req, res) => {
+   Wiki
+  .findAll()
+  .then((data) => {
+  res.render('wikis/show', {
+    wiki: data
+  })
+  .catch(err => console.log('ERROR', err));
+  });
+};
 
  controller.destroy = (req, res) => {
   Wiki

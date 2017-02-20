@@ -6,14 +6,14 @@ Wiki.findAll = () => {
   return db.manyOrNone(`Select * FROM wiki`);
 }
 
-Wiki.save = (wiki, ourMarkdown, sqlDate) => {
+Wiki.save = (wiki, ourMarkdown, date_authored) => {
   console.log(ourMarkdown)
   return db.none(`
   INSERT INTO wiki
-  (title, category, content)
+  (title, category, content, date_authored)
   VALUES
-  ($1, $2, $3)`,
-  [wiki.title, wiki.category, ourMarkdown, sqlDate]
+  ($1, $2, $3, $4)`,
+  [wiki.title, wiki.category, ourMarkdown, date_authored]
   );
 };
 

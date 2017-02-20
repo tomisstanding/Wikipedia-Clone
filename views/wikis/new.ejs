@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Wikipedia</title>
-  <link rel="stylesheet" href="/style.css">
+<title>Wikipedia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>New page</h1>
-      <section>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="navbar-brand" href="/wiki"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Wikipedia-logo_(inverse).png" alt=""></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/wiki">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Left column -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    <p><a href="/wiki/show">Trending Articles</a></p>
+    <p><a href="/wiki/show">This Weeks Newest</a></p>
+    <p><a href="/wiki/show">Authors Favorites</a></p>
+</div>
+<!-- End left column -->
+    <div class="col-sm-8 text-left">
+    <h1>Submit an article</h1>
+    <section>
         <form action="/wiki" method="POST">
           <label for="wiki[title]">Title:</label><br>
           <input type="text" name="wiki[title]"><br>
           <label for="wiki[category]">Category:</label><br>
           <input type="text" name="wiki[category]"><br>
-          <label for="wiki[content]"></label><br>
-          <input type="text" name="wiki[content]" placeholder="create an article here...">
-          <input type="submit">
+          <label for="wiki[content]">Content:</label>
+          <textarea class="form-control" name="wiki[content]" rows="20" id="comment"></textarea>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </section>
-    </header>
-  </main>
+    </div>
+<!-- Right column for faux advertsiments -->
+    <div class="col-sm-2 sidenav">
+     <p>ADS</p>
+      <div class="ads">
+        <img src="https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif" width="150" height="100">
+      </div>
+      <div class="ads">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End right column -->
+<footer class="container-fluid text-center">
+  <p>Made With &#9749</p><br>
+  <p>By: Thomas Standing</p>
+</footer>
 </body>
 </html>
+

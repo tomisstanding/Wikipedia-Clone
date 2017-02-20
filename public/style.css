@@ -1,0 +1,105 @@
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+}
+
+.header-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar img {
+  height: 50px;
+  width: 50px;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 1100px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: rgba(1,1,1,0.2);
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  margin-top: 550px;
+  position: relative;
+}
+
+.ads {
+  width: 180px;
+}
+
+#search {
+  float: right;
+  margin-top: 9px;
+  width: 250px;
+}
+
+.search {
+  padding: 5px 0;
+  width: 230px;
+  height: 80px;
+  margin: 0 auto;
+  position: relative;
+  line-height: 22px;
+}
+
+.search input {
+  position: absolute;
+  width: 0px;
+  float: Left;
+  margin-left: 210px;
+  transition: all 0.7s ease-in-out;
+  height: 30px;
+  line-height: 18px;
+  padding: 0 2px 0 2px;
+}
+
+.btn-primary {
+  margin-right: 10px;
+  width: 100px;
+}
+
+.btn-danger>text{
+  font-size: 15px !important;
+}
+
+.btn-danger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search:hover input, .search input:focus {
+  width: 200px;
+  margin-left: 0px;
+}
+
+.btn {
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  border-radius:1px;
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 800px) {
+.sidenav {
+  height: auto;
+  padding: 15px;
+}
+  .row.content {height:auto;}
+}
