@@ -55,14 +55,14 @@
 }
 
 .search input {
-  position: absolute;
+  display: flex;
+  align-items: center;
   width: 0px;
-  float: Left;
-  margin-left: 210px;
+  margin-left: 180px;
   transition: all 0.7s ease-in-out;
   height: 30px;
   line-height: 18px;
-  padding: 0 2px 0 2px;
+  padding: 0;
 }
 
 #edit {
