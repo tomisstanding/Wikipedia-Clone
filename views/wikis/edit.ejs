@@ -34,40 +34,41 @@
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+    <br><p><a href="/wiki/show">Trending Articles</a></p><br>
+    <br><p><a href="/wiki/show">This Weeks Newest</a></p><br>
+    <br><p><a href="/wiki/show">Authors Favorites</a></p><br>
     </div>
 <!-- End left column -->
     <div class="col-sm-8 text-left">
       <h1>Welcome</h1>
-      <h3>feel free to edit your article here</h3>
-      <form action="/wiki/<%= wiki.id %>?_method=PUT" method="POST">
-      <label for="wiki[title]">Title:</label>
-      <input type="text" name="wiki[title]" value="<%= wiki.title %>"><br>
-      <br><label for="wiki[category]">Category:</label>
-      <input type="text" name="wiki[category]" value="<%= wiki.category %>"><br>
-      <br><label for="wiki[content]">Content:</label>
-      <input type="text" name="wiki[content]" value="<%= wiki.content %>"><br>
-      <br><input type="submit" value="SUBMIT CHANGES">
-      </form>
-       <form method="POST" action="/wiki/<%= wiki.id %>?_method=DELETE">
-      <button type="submit" class="btn-lg btn-danger">Delete</button>
-      </form>
+        <form method="POST" action="/wiki/<%= wiki.id %>?_method=DELETE">
+        <button type="submit" class="btn-lg btn-danger" id="delete-btn">Delete</button>
+        </form>
+        <form action="/wiki/<%= wiki.id %>?_method=PUT" method="POST">
+        <label for="wiki[title]">Title:</label>
+        <input type="text" name="wiki[title]" value="<%= wiki.title %>"><br>
+        <br><label for="wiki[category]">Category:</label>
+        <input type="text" name="wiki[category]" value="<%= wiki.category %>"><br>
+        <br><label for="wiki[content]">Content:</label>
+        <input type="text" name="wiki[content]" value="<%= wiki.content %>" rows="20"><br>
+        <br><input type="submit" class="btn btn-lg btn-primary" value="Submit">
+        </form>
     </div>
 <!-- Right column for faux advertisments -->
-    <div class="col-sm-2 sidenav">
-     <p>ADS</p>
-      <div class="ads">
-        <img src="https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif" width="150" height="100">
-      </div>
-      <div class="ads">
-      </div>
-    </div>
+<div class="col-sm-2 sidenav">
+  <p>ADS</p>
+  <div class="ads">
+    <img src="https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif" width="180" height="100"><br>
+  </div>
+  <div class="ads">
+    <br><img src="https://media.giphy.com/media/ybUlRXJA8EpS8/giphy.gif" width="180" height="100">
+  </div>
+  <div class="ads"
+    <br><img src="https://s-media-cache-ak0.pinimg.com/564x/b8/a7/55/b8a75594567d7b2f3ebfb0a15da80a65.jpg" height="500" width="180">
   </div>
 </div>
 <!-- End right column -->
-<footer class="container-fluid text-center">
+<footer id="container-fluid-text-center">
   <p>Made With &#9749</p><br>
   <p>By: Thomas Standing</p>
 </footer>
