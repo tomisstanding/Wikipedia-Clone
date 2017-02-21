@@ -33,22 +33,42 @@
     </div>
   </div>
 </nav>
+
+<!-- search bar -->
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="input-group buscador-principal">
+        <input name="search_param" value="all" id="search_param" type="hidden">
+        <input class="form-control" name="x" placeholder="Search" type="text">
+        <div class="input-group-btn search-panel">
+          <button type="button" id="search" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span id="search_concept">Category</span> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+          <li><a href="/wiki/show:id[$1]">Sports</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Coding</a></li>
+          <li><a href="#">Restaurants</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Go on pick one</a></li>
+          </ul>
+        </div>
+        <span class="input-group-btn">
+          <button id="searching" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End search -->
+
 <!-- Header Image -->
 <div class="header-image">
   <img src="https://tctechcrunch2011.files.wordpress.com/2010/05/wikipedia1.png" alt="">
 </div>
 <!-- End header image -->
 
-<!-- search bar -->
-<div class="container">
-  <div class="row">
-    <div class="search">
-    <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
-    <button type="submit" class="btn btn-primary btn-sm">Search</button>
-    </div>
-  </div>
-</div>
-<!-- End search -->
 
 <!-- Footer -->
 <footer id="container-fluid-text-center">
