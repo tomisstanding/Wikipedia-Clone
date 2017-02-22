@@ -34,7 +34,7 @@ Wiki.findById = (id) => {
   );
 };
 
-Wiki.findCategory = (category) => {
+Wiki.findByCategory = (category) => {
   return db.manyOrNone(`
     SELECT * FROM wiki
     WHERE category = $1`,

@@ -62,7 +62,7 @@ controller.edit = (req, res) => {
 
 controller.search = (req, res) => {
   Wiki
-  .findByCategory(category)
+  .findByCategory(req.params.category)
   .then((data) => {
     res.render('wikis/show', {
       wiki: data
