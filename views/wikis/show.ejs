@@ -1,3 +1,4 @@
+<!-- Bootstrap template taken from bootsnipp.com -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -18,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a id="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Wikipedia-logo_(inverse).png" alt=""></a>
+      <a id="navbar-brand" href="/wiki"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Wikipedia-logo_(inverse).png" alt=""></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -31,12 +33,13 @@
     </div>
   </div>
 </nav>
+
 <!-- Left column -->
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2 sidenavv">
+    <div class="col-sm-2 sidenavleft">
     <a href="/wiki/show" id="button1" class="btn btn-default">Trending Articles <span class="glyphicon glyphicon-thumbs-up"></span></a><br>
-    <br><a href="/wiki/show" id="button2" class="btn btn-default">This Weeks Newest <span class="glyphicon glyphicon-arrow-up"></span></a><br>
+    <br><a href="/wiki/<%= wiki.date_authored %>/show" id="button2" class="btn btn-default">This Weeks Newest <span class="glyphicon glyphicon-arrow-up"></span></a><br>
     <br><a href="/wiki/show" id="button3" class="btn btn-default">Authors Favorites <span class="glyphicon glyphicon-heart"></span></a>
     </div>
 <!-- End left column -->
@@ -58,23 +61,25 @@
   </main>
 </div>
 
+
 <!-- Right column for faux advertsiments -->
 <div class="col-sm-2 sidenav">
   <p>ADS</p>
   <div class="ads">
-    <img src="https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif" width="180" height="100"><br>
+    <img id="ad1" src="https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif"><br>
   </div>
   <div class="ads">
-    <br><img src="https://media.giphy.com/media/ybUlRXJA8EpS8/giphy.gif" width="180" height="100"><br>
+    <br><img id="ad2" src="https://media.giphy.com/media/ybUlRXJA8EpS8/giphy.gif"><br>
   </div>
   <div class="ads"
     <br><img id="md" src="https://s-media-cache-ak0.pinimg.com/564x/b8/a7/55/b8a75594567d7b2f3ebfb0a15da80a65.jpg" height="500" width="180">
   </div>
 </div>
 <!-- End right column -->
+
 <footer id="container-fluid-text-center">
-  <p>Made With &#9749</p><br>
-  <p>By: Thomas Standing</p>
+  <p id="footer">Made With &#9749</p><br>
+  <p id="footer">By: Thomas Standing</p>
 </footer>
 </body>
 </html>

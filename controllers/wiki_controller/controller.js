@@ -49,20 +49,9 @@ controller.edit = (req, res) => {
   });
  };
 
-//  controller.show = (req, res) => {
-//    Wiki
-//   .findAll()
-//   .then((data) => {
-//   res.render('wikis/show', {
-//     wiki: data
-//   })
-//   .catch(err => console.log('ERROR', err));
-//   });
-// };
-
-  controller.show = (req, res) => {
+ controller.show = (req, res) => {
    Wiki
-  .findCategory(req.params.category)
+  .findAll()
   .then((data) => {
   res.render('wikis/show', {
     wiki: data
@@ -71,6 +60,16 @@ controller.edit = (req, res) => {
   });
 };
 
+controller.search = (req, res) => {
+  Wiki
+  .findByCategory(category)
+  .then((data) => {
+    res.render('wikis/show', {
+      wiki: data
+    })
+    .catch(err => console.log('ERROR', err));
+  });
+};
 
  controller.destroy = (req, res) => {
   Wiki

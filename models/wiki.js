@@ -6,8 +6,17 @@ Wiki.findAll = () => {
   return db.manyOrNone(`Select * FROM wiki`);
 }
 
+Wiki.thisWeeksNewest = (date_authored) => {
+return db.manyOrNone(`
+  SELECT * FROM wiki
+  WHERE id = $1
+  ORDER BY date_authored
+  DESC LIMIT 3`,
+  [date_authored]
+  );
+}
+
 Wiki.save = (wiki, ourMarkdown, date_authored) => {
-  console.log(ourMarkdown)
   return db.none(`
   INSERT INTO wiki
   (title, category, content, date_authored)
@@ -27,8 +36,7 @@ Wiki.findById = (id) => {
 
 Wiki.findCategory = (category) => {
   return db.manyOrNone(`
-    SELECT * FROM
-    wiki
+    SELECT * FROM wiki
     WHERE category = $1`,
     [category]
   );
@@ -47,7 +55,11 @@ Wiki.update = (wiki, id) => {
 };
 
 Wiki.destroy = (id) => {
-  return db.query(`DELETE FROM wiki WHERE id = $1`, [id]);
+  return db.query(`
+    DELETE FROM wiki
+    WHERE id = $1`,
+    [id]
+  );
 }
 
 module.exports = Wiki;

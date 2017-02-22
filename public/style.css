@@ -1,3 +1,5 @@
+/*Lots of bootstrap found from bootsnipp.com for search bar and buttons and layout*/
+
 .navbar {
   margin-bottom: 0;
 }
@@ -6,6 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.content_container {
+  border-radius: 1px;
+  border-color: black;
 }
 
 .navbar img {
@@ -23,7 +30,7 @@
   height: 115.7%;
 }
 
-.sidenavv {
+.sidenavleft {
   padding-top: 20px;
   background-color: rgba(1,1,1,0.2);
   height: 115.7%;
@@ -47,26 +54,6 @@
   width: 250px;
 }
 
-.search {
-  padding: 5px 0;
-  width: 230px;
-  height: 80px;
-  margin: 0 auto;
-  position: relative;
-  line-height: 22px;
-}
-
-.search input {
-  display: flex;
-  align-items: center;
-  width: 0px;
-  margin-left: 180px;
-  transition: all 0.7s ease-in-out;
-  height: 30px;
-  line-height: 18px;
-  padding: 0;
-}
-
 #edit {
   width: 100px;
   border-radius: 8px;
@@ -78,13 +65,20 @@
   margin-left: 87%
 }
 
+#textfield {
+  vertical-align: text-top !important;
+  text-align: left;
+  width: 800px;
+  height: 300px;
+  text-overflow: ellipsis;
+}
+
 .btn-danger>text{
   font-size: 15px !important;
 }
 
 .btn {
   font-size: 12px;
-  position: absolute;
   right: 0;
   top: 5px;
   border-radius:1px;
@@ -107,6 +101,7 @@
 }
 
 .btn-default {
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,8 +111,34 @@
   height: 40px;
 }
 
+#footer {
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+#ad1 {
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  height: 150px;
+  margin-left: -10px;
+}
+
+#ad2 {
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  margin-top: 50px;
+  margin-left: -10px;
+  height: 200px;
+}
+
 #md {
+  justify-content: center;
+  align-items: center;
   margin-top: 50%;
+  width: 210px;
+  margin-left: -15px;
 }
 
 #button1 {
@@ -125,7 +146,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 80px;
+  margin-top: 10px;
   width: 180px;
 }
 
@@ -134,7 +155,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 80px;
+  margin-top: 20px;
   width: 180px;
 }
 
@@ -144,7 +165,7 @@
   justify-content: center;
   display: flex;
   width: 180px;
-  margin-top: 150px;
+  margin-top: 30px;
   margin-right: 30px;
 }
 
@@ -193,7 +214,37 @@ font-style: italic;
     padding: 15px 25px;
 }
 
+
 @media screen and (max-width: 500px) {
+
+#button1 {
+  margin-left: 100px;
+  margin-top: -10px;
+}
+
+#button2 {
+  margin-left: 100px;
+  margin-top: -10px;
+}
+
+#button3 {
+  margin-left: 100px;
+  margin-top: -10px;
+}
+
+#ad1 {
+  width: 350px;
+  height: 200px;
+}
+
+#ad2 {
+  width: 350px;
+  height: 270px;
+}
+
+#md {
+  width: 400px;
+}
 
 #adv-search {
     width: 500px;
@@ -229,5 +280,4 @@ font-style: italic;
     font-size: 20px;
     display: none;
   }
-
 }
