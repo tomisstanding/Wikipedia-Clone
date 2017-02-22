@@ -49,12 +49,14 @@
     <section>
      <% wiki.forEach(wiki => { %>
        <div class="content_container">
+         <hr>
          <h2>Title: <%= wiki.title %></h2>
          <h4>Category: <%= wiki.category %></h4>
          <p><%- wiki.content %></p>
          <% console.log(typeof `${wiki.date_authored}`) %>
          <p class="date"><%= `${wiki.date_authored}`.slice(0,10) %></p>
          <a href="/wiki/<%= wiki.id %>/edit" class="btn btn-primary btn-warning">Edit</a>
+         <hr>
        </div>
      <% }) %>
    </section>
