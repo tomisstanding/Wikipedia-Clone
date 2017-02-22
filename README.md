@@ -12,4 +12,4 @@ For my project 2 I decided to try and build a wikipedia clone that uses node.js 
 
 ### Challenges
 
-I definitely came across more than one or two challenges and ultimately was unable to complete my search by category functionality, but definitely plan on working on this in the near future.
+I definitely came across more than one or two challenges and ultimately was unable to get all the functionality I wanted, but definitely plan on working on this in the near future.

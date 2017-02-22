@@ -60,6 +60,17 @@ controller.edit = (req, res) => {
   });
 };
 
+controller.newest = (req, res) => {
+  Wiki
+  .thisWeeksNewest()
+  .then((data) => {
+    res.render('wikis/show', {
+      wiki: data
+    })
+    .catch(err => console.log('ERROR', err));
+  });
+};
+
 controller.search = (req, res) => {
   Wiki
   .findByCategory(req.params.category)

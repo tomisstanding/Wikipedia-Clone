@@ -6,13 +6,11 @@ Wiki.findAll = () => {
   return db.manyOrNone(`Select * FROM wiki`);
 }
 
-Wiki.thisWeeksNewest = (date_authored) => {
+Wiki.thisWeeksNewest = () => {
 return db.manyOrNone(`
   SELECT * FROM wiki
-  WHERE id = $1
-  ORDER BY date_authored
-  DESC LIMIT 3`,
-  [date_authored]
+  ORDER BY date_authored DESC
+  LIMIT 3`
   );
 }
 
